@@ -33,6 +33,32 @@ This function should only modify configuration layer settings."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
+     auto-completion
+
+     (lsp :variables
+          default-nix-wrapper (lambda (args)
+                                (append
+                                 (append (list "nix-shell" "-I" "." "--pure" "--command" )
+                                         (list (mapconcat 'identity args " "))
+                                         )
+                                 (list (nix-current-sandbox))
+                                 )
+                                )
+
+          lsp-haskell-process-wrapper-function default-nix-wrapper
+          lsp-haskell-process-path-hie "ghcide"
+          lsp-haskell-process-args-hie '()
+          )
+
+     (haskell :variables
+              haskell-enable-hindent t
+              haskell-completion-backend 'lsp
+              haskell-process-type 'cabal-new-repl
+              )
+
+     (c-c++ :variables c-c++-backend 'lsp-ccls)
+
+
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press `SPC f e R' (Vim style) or
@@ -63,7 +89,7 @@ This function should only modify configuration layer settings."
    ;; To use a local version of a package, use the `:location' property:
    ;; '(your-package :location "~/path/to/your-package/")
    ;; Also include the dependencies as they will not be resolved automatically.
-   dotspacemacs-additional-packages '()
+   dotspacemacs-additional-packages '(nix-sandbox)
 
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
