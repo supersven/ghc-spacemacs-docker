@@ -34,3 +34,11 @@ that's needed to build GHC and later even builds it from scratch.
 ### Cleanup
 Run `cleanup.sh` to remove the two created containers.
 
+### Screenshots
+
+Information on hover:
+![Hover](screenshot_01.png)
+
+Type error:
+![Type Error](screenshot_02.png)
+
