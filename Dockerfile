@@ -41,3 +41,7 @@ RUN emacs -batch -l ~/.emacs.d/init.el --eval "(run-hooks 'emacs-startup-hook)"
 # it (see `shell.nix`).
 RUN nix-env -f '<nixpkgs>' -iA haskell.compiler.ghc865
 
+# Create `compile_commands.json` (C IDE support)
+RUN nix-env -f '<nixpkgs>' -i bear
+RUN nix-shell --command 'bear hadrian/build.sh -j12 --freeze1 --flavour=Devel2 stage2:lib:rts'
+

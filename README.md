@@ -36,9 +36,17 @@ Run `cleanup.sh` to remove the two created containers.
 
 ### Screenshots
 
+#### Haskell
 Information on hover:
 ![Hover](screenshot_01.png)
 
 Type error:
 ![Type Error](screenshot_02.png)
+
+#### C
+C - Information on hover (Please note the function type in the left corner):
+![C - Hover](screenshot_03.png)
+
+C - error (unknown function):
+![C - Error (unknown function)](screenshot_04.png)
 
