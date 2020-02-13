@@ -37,3 +37,7 @@ RUN nix-shell --command 'hadrian/build.sh -c -j12 --docs=none --flavour=Devel2'
 COPY /config/.spacemacs /root/.spacemacs
 RUN emacs -batch -l ~/.emacs.d/init.el --eval "(run-hooks 'emacs-startup-hook)"
 
+# haskell-mode needs a GHC. Use GHC 8.6.5 because `nix-shell` already installed
+# it (see `shell.nix`).
+RUN nix-env -f '<nixpkgs>' -iA haskell.compiler.ghc865
+
