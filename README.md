@@ -21,7 +21,27 @@ The most important part of this little project is to show how to configure
 ## Usage
 
 ### Run
-Run `build-and-start-containers.sh` and direct your browser to
+#### Pre-built docker image
+There is a pre-built docker image
+(https://hub.docker.com/r/supersven/ghc-spacemacs). It is pretty big, but
+contains the GHC clone and Spacemacs with all needed packages.
+
+To use it, run `start-containers.sh`.
+
+You can still change the `config/.spacemacs` file, because it is mounted into on
+container creation. The other files are copyied into the image; if you want to
+change them, you've to change them manually in the container instance.
+
+#### Manually built docker image
+
+Run `build-and-start-containers.sh`, this builds the docker image.
+
+Building the image takes a long time. Stay patient: It downloads everything
+that's needed to build GHC and later even builds it from scratch.
+
+#### VNC - Open Spacemacs
+
+Both scripts start a VNC server with a web interface. Direct your browser to
 http://localhost:10000/index.html?encoding=rgb32&password=111 . This should give
 you an in-browser VNC session with Spacemacs.
 
@@ -34,11 +54,10 @@ The `ghcide` setup take some time to initialize.
 All `*.c` files under `rts` should be supported by `ccls`. Just open one and play a
 bit around ... :smiley
 
-Building the images takes a long time. Stay patient: It downloads everything
-that's needed to build GHC and later even builds it from scratch.
-
 ### Cleanup
-Run `cleanup.sh` to remove the two created containers.
+Before you can run the two creational scripts (`build-and-start-containers.sh`
+and `start-containers.sh`) again, you have to stop and remove the containers.
+This is done by running `cleanup.sh`.
 
 ### Screenshots
 
