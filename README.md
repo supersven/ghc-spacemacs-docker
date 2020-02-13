@@ -25,8 +25,14 @@ Run `build-and-start-containers.sh` and direct your browser to
 http://localhost:10000/index.html?encoding=rgb32&password=111 . This should give
 you an in-browser VNC session with Spacemacs.
 
-Add `ghc` as project with `C-c C-p a ghc` and open any Haskell file under
-`compiler/`. Accept the default for the workpace.
+Open Treemacs with `M-0` and add `/root/ghc/.` as project. Open any Haskell file
+under `compiler/`. You will be asked for the workspace root. The default -
+`/root/ghc` is fine.
+
+The `ghcide` setup take some time to initialize.
+
+All `*.c` files under `rts` should be supported by `ccls`. Just open one and play a
+bit around ... :smiley
 
 Building the images takes a long time. Stay patient: It downloads everything
 that's needed to build GHC and later even builds it from scratch.
