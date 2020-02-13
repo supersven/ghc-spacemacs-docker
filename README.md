@@ -23,8 +23,8 @@ The most important part of this little project is to show how to configure
 ### Run
 #### Pre-built docker image
 There is a pre-built docker image
-(https://hub.docker.com/r/supersven/ghc-spacemacs). It is pretty big, but
-contains the GHC clone and Spacemacs with all needed packages.
+(https://hub.docker.com/r/supersven/ghc-spacemacs). It is pretty big (3.65 GB),
+but contains the GHC clone and Spacemacs with all needed packages.
 
 To use it, run `start-containers.sh`.
 
