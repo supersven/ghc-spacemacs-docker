@@ -1,6 +1,4 @@
-ghc/
 .git/
-*.sh
 Dockerfile
 README.md
 .gitgnore
