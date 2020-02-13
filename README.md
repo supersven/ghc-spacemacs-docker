@@ -59,9 +59,9 @@ Before you can run the two creational scripts (`build-and-start-containers.sh`
 and `start-containers.sh`) again, you have to stop and remove the containers.
 This is done by running `cleanup.sh`.
 
-### Screenshots
+## Screenshots
 
-#### Haskell
+### Haskell
 Information on hover:
 ![Hover](screenshot_01.png)
 
@@ -74,3 +74,7 @@ Information on hover (Please note the function type in the left corner):
 
 Error (unknown function):
 ![C - Error (unknown function)](screenshot_04.png)
+
+## Contributing
+
+Please feel free to open issues and / or pull requests.
