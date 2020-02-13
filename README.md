@@ -50,9 +50,8 @@ Type error:
 ![Type Error](screenshot_02.png)
 
 #### C
-C - Information on hover (Please note the function type in the left corner):
+Information on hover (Please note the function type in the left corner):
 ![C - Hover](screenshot_03.png)
 
-C - error (unknown function):
+Error (unknown function):
 ![C - Error (unknown function)](screenshot_04.png)
-
