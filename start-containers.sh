@@ -17,5 +17,5 @@ docker run -d \
 --volumes-from x11-bridge \
 -e DISPLAY=:14 \
 supersven/ghc-spacemacs:latest \
-emacs
+emacs --maximized
 
